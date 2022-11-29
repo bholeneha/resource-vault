@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+<nav>
+    <a href="users">Profile Home</a>
+    <a href="users/favourites">Favourites</a>
+    <!-- Login UI -->
+    <% if (user) { %>
+        <a href="/logout">Log Out</a>
+    <% } else { %>
+        <a href="/auth/google">Login with Google</a>
+    <% } %>
+</nav>
+
+<h2> User Profile</h2>
+<p>Log in to see your favourites!</p>
+<br>
+
+
+
+<%- include('../partials/footer') %>

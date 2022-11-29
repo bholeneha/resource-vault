@@ -1,8 +1,69 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* css variables */
+:root {
+  --offwhite: #FBF8F3;
+  --orange: #f77532;
+  --blueborder: #c3e1e5;
+  --bluetext: #2A8A92;
 }
 
-a {
-  color: #00B7FF;
+
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: var(--bluetext);
+}
+
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 20% 70% 10%;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--offwhite);
+  justify-content: space-between;
+}
+
+header>h1 {
+  /* margin: 2%; */
+  color: var(--orange);
+  opacity: 70%;
+  align-self: center;
+}
+
+header>nav {
+  /* margin: 2%; */
+  align-self: center;
+  justify-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+
+header>nav>a {
+  color: var(--orange);
+  opacity: 90%;
+  text-decoration: none;
+}
+
+header>nav>a {
+  margin: 5px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--orange);
+}
+
+a:hover {
+  color: white;
+  background-color: var(--orange);
 }
