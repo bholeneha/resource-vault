@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-// let methodOverride = require('method-override')
+let methodOverride = require('method-override')
 var session = require('express-session');
 var passport = require('passport')
 
@@ -24,13 +24,14 @@ var indexRouter = require('./routes/index');
 var categoriesRouter = require('./routes/categories')
 var linksRouter = require('./routes/links')
 var usersRouter = require('./routes/users');
+var favouritesRouter = require('./routes/favourites')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //middleware
-// app.use(methodOverride('_method'))
+app.use(methodOverride('_method'))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -50,6 +51,7 @@ app.use('/', indexRouter);
 app.use('/categories', categoriesRouter);
 app.use('/', linksRouter);
 app.use('/', usersRouter);
+app.use('/', favouritesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

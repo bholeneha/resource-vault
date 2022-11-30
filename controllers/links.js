@@ -5,5 +5,6 @@ module.exports = {
 };
 
 function create(req, res) {
-    res.render('links/new')
+    let categories = ['Job Boards', 'Open Source', 'Communities', 'Tools', 'Freelance', 'Miscellaneous', 'Coding Challenges', 'Documentation/References']
+    res.render('links/new', { categories, user: req.user })
 }

@@ -15,6 +15,7 @@
 
 
 body {
+  width: 100vw;
   height: 100vh;
   display: grid;
   grid-template-rows: 20% 70% 10%;
@@ -26,26 +27,28 @@ body {
 
 header {
   grid-area: header;
+  background-color: var(--offwhite);
   display: flex;
   flex-direction: row;
-  background-color: var(--offwhite);
   justify-content: space-between;
 }
 
 header>h1 {
-  /* margin: 2%; */
   color: var(--orange);
   opacity: 70%;
   align-self: center;
+  margin: 2%;
+
 }
 
 header>nav {
-  /* margin: 2%; */
   align-self: center;
   justify-self: flex-end;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin: 1%;
+  background-color: transparent;
 }
 
 
@@ -66,4 +69,52 @@ header>nav>a {
 a:hover {
   color: white;
   background-color: var(--orange);
+}
+
+main {
+  text-align: center;
+
+}
+
+li {
+  list-style: none;
+}
+
+.categories-area {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-area {
+  border-right: 2px solid var(--blueborder);
+}
+
+.card {
+  border: 2px solid var(--blueborder);
+}
+
+
+
+h3 {
+  margin: 5% 2% 0% 2%;
+}
+
+.home-page {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+    "welcome"
+    "topthree";
+}
+
+.home-page>.welcome-message {
+  grid-area: welcome;
+  justify-self: center;
+  align-self: center;
+}
+
+.top-three {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5% 2%;
 }

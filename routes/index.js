@@ -3,7 +3,15 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index');
+  console.log(req.user)
+  if (req.user && req.user.email == process.env.ADMINEMAIL) {
+    req.user.isAdmin = true
+    res.render('index', { user: req.user })
+  } else if (req.user) {
+    res.render('index', { user: req.user })
+  } else {
+    res.render('index', { user: req.user })
+  }
 });
 
 //Login Route
@@ -17,7 +25,7 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: `/users/index`,
+    successRedirect: `/`,
     failureRedirect: 'error'
   }
 ))

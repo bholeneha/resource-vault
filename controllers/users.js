@@ -14,16 +14,7 @@ function index(req, res, next) {
 }
 
 function show(req, res, next) {
-    console.log(req)
-
-    User.findById(req.params.id)
-        .populate('favourites')
-        .exec(function (err, user) {
-            User.find({})
-                .where('_id')
-                .nin(user.favourites)
-                .exec(function (err, favourites) {
-                    res.render('users/show', { user, favourites })
-                })
-        })
+    User.findById(req.params.id).exec(function (err, favourites) {
+        res.render('users/show', { user: req.user, favourites })
+    })
 }

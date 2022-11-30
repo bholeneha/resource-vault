@@ -1,4 +1,32 @@
 <%- include('../partials/header') %>
 <h2> Explore Categories</h2>
+<a href="/links/new">Add New Resource</a>
 
+<div class="categories-area">
+
+    <!-- side navigation -->
+    <div class="nav-area"> 
+        <ul class="nav flex-column nav-tabs">
+            <%categories.forEach(function(category){%>
+                <li class="nav-item">
+                    <a class="nav-link" href='/categories/<%=category.name%>'><%=category.name%></a>
+                    <% if(user?.isAdmin){ %>
+                        <form style='display: inline;' action="/categories/<%=category.id%>=?_method=DELETE" method="POST">
+                            <button>X</button>
+                        </form> 
+                    <% } %>
+                </li>
+            <%})%>
+        </ul>
+    </div>
+
+    <!-- links -->
+    <div class="links-area">
+        <h2>LINKS</h2>
+    </div>
+
+
+</div>
+
+ 
 <%- include('../partials/footer') %>
