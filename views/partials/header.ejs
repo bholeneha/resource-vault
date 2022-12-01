@@ -15,12 +15,13 @@
         <nav class="navbar-transition cool-navbar z-depth-0">
             <a href="/"> home </a>
             <a href="/categories"> explore</a>
-            <% if(user?.isAdmin == true){%>
-                <a href="/categories/new">add new category</a>
-            <%}%>
+            
             <!-- <a href="/links/new">Add New Resource</a> -->
             <!-- Login UI -->
-            <% if (user) { %>
+            <% if (locals.user) { %>
+                <% if(user.isAdmin == true){%>
+                    <a href="/categories/new">add new category</a>
+                <%}%>
                 <a href="/users/<%=user.id%>/favourites">favourites</a>
                 <a href="/users/index">profile</a>
                 <a href="/logout">log out</a>

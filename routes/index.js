@@ -8,9 +8,10 @@ router.get('/', function (req, res, next) {
     req.user.isAdmin = true
     res.render('index', { user: req.user })
   } else if (req.user) {
+    req.user.isAdmin = false
     res.render('index', { user: req.user })
   } else {
-    res.render('index', { user: req.user })
+    res.render('index')
   }
 });
 

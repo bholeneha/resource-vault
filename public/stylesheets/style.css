@@ -25,6 +25,8 @@ body {
     "footer";
 }
 
+/* HEADER STYLING */
+
 header {
   grid-area: header;
   background-color: var(--offwhite);
@@ -52,53 +54,32 @@ header>nav {
 }
 
 
-header>nav>a {
+header>nav>a,
+a,
+button,
+.nav-link {
   color: var(--orange);
   opacity: 90%;
-  text-decoration: none;
-}
-
-header>nav>a {
   margin: 5px;
   text-decoration: none;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 5px;
+  border-radius: 20%;
   color: var(--orange);
+  border-radius: 25%;
+  border: 2px;
 }
 
-a:hover {
+a:hover,
+button:hover {
   color: white;
   background-color: var(--orange);
 }
 
-main {
-  text-align: center;
-
+.nav-link {
+  display: inline;
 }
 
-li {
-  list-style: none;
-}
-
-.categories-area {
-  display: flex;
-  flex-direction: row;
-}
-
-.nav-area {
-  border-right: 2px solid var(--blueborder);
-}
-
-.card {
-  border: 2px solid var(--blueborder);
-}
-
-
-
-h3 {
-  margin: 5% 2% 0% 2%;
-}
-
+/* HOME PAGE & GENERAL STYLING */
 .home-page {
   display: grid;
   grid-template-rows: 50% 50%;
@@ -117,4 +98,58 @@ h3 {
   display: flex;
   justify-content: space-evenly;
   margin: 5% 2%;
+}
+
+h3 {
+  margin: 5% 2% 0% 2%;
+}
+
+h2 {
+  margin: 2% 2% 3% 2%;
+}
+
+.card {
+  border: 2px solid var(--blueborder);
+}
+
+main {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+/* CATEGORIES PAGE STYLING */
+
+
+.categories-page {
+  display: grid;
+  grid-template-columns: 22% 78%;
+  /* grid-template-areas:
+    "sidebar"
+    "links-area"; */
+}
+
+
+.categories-area {
+  grid-column: 0 span 1;
+}
+
+.links-area {
+  grid-column: 1 span 1;
+  display: grid;
+}
+
+.nav-tabs {
+  border-right: 2px solid var(--blueborder);
+  border-bottom: none;
+}
+
+.link-info {
+  margin: 5%;
+}
+
+label {
+  margin: 5px;
 }

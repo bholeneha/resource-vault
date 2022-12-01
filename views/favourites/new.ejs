@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
-<h2> Add New Resource</h2>
+<h2> Add New Favourite</h2>
 
-<form class="add-forms" action="/links" method="POST">
+<form class="add-forms" action="/user/<%=user.id%>/favourites" method="POST">
 
     <label class="labels">Name:
         <input type="text" name="name">
@@ -23,8 +23,18 @@
             <% }) %>
         </select>
     </label><br>
-    <br>
-    <button type="submit" value="Add Link">add</button>
+
+    <label class="recommendedBy">Recommended By:
+        <input type="text" name="recommendedBy">
+    </label><br>
+
+    <label class="notes">Notes:
+        <input type="text" name="notes">
+    </label><br>
+
+
+    
+    <button type="submit" value="Add Link">add to favourites</button>
 </form>
 
 <%- include('../partials/footer') %>
