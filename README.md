@@ -36,10 +36,9 @@ Deployed here: [Resource Vault](https://resource-vault.up.railway.app/)
 Explore the resources by clicking explore in nav bar from the landing page. Click the clink to view more information. Get access to more feature - elibility to edit links, adding to favourites - by logging in using google. 
 
 ## Next Steps 
-- Add favourites feature
+- Finish favourites feature
 - Improve styling and user interface
 - Make it responsive
 - Add link previews
 - Add keyword search
 - Track hits to a category and link to display top 5 
-- Add properties to the models
