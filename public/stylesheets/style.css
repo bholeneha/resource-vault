@@ -75,6 +75,10 @@ button,
   border: 2px;
 }
 
+form>button {
+  background-color: transparent;
+}
+
 a:hover,
 button:hover {
   color: white;
