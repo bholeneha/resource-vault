@@ -16,6 +16,7 @@
     <div class="categories-area">
         <div class="nav-area"> 
             <ul class="nav flex-column nav-tabs">
+                <li>Categories</li><br>
                 <%categories.forEach(function(category){%>
                     <li class="nav-item">
                         <a class="nav-link" href='/categories/<%=category.id%>'><%=category.name%>
@@ -36,7 +37,7 @@
         <!-- If link clicked, display this -->
         <% if (locals.linkToDisplay){%>
             <div class="link-display">
-                <h4>Link Information</h4>
+                <h5>Link Information</h5>
                 <br>
                 <ul class="link-info">
                     <li><h5><%=linkToDisplay.name%></h5></li>
@@ -67,7 +68,7 @@
             </div>
             <!-- If category clicked, display this -->
         <% } else if (locals.category){%>
-            <h4><%=category.name%></h4>   
+            <h5><%=category.name%></h5>   
             <div class="row row-cols-3 top-three">
                 <% category.links.forEach(function(link){%> 
                     <div class="col card-group">
@@ -91,7 +92,7 @@
                 <%})%>
             </div>
         <%} else {%>
-                <h4>Pick A Category</h4>    
+                <h5>Pick A Category</h5>    
         <%} %> 
 
     </div>
