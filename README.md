@@ -26,7 +26,9 @@ Resource Vault is a collection of links and resources for a dev student.
 ## Getting Started
 
 Repo: [Resource Vault](https://github.com/bholeneha/resource-vault)
+
 Deployed here: [Resource Vault](https://resource-vault.up.railway.app/)
+
 
 Explore the resources by clicking explore in nav bar from the landing page. Click the clink to view more information. Get access to more feature - elibility to edit links, adding to favourites - by logging in using google. 
 

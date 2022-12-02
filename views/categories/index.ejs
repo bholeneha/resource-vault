@@ -36,29 +36,27 @@
 
         <!-- If link clicked, display this -->
         <% if (locals.linkToDisplay){%>
+            <h5>Link Information</h5>
             <div class="link-display">
-                <h5>Link Information</h5>
-                <br>
                 <ul class="link-info">
-                    <li><h5><%=linkToDisplay.name%></h5></li>
+                    <br>
+                    <li><h3><%=linkToDisplay.name%></h3></li><br>
                     <li>Category:<br>
-                        <h5><% linkToDisplay.categories.forEach(function(category){%><%=category.name%><%})%></h5>
-                    </li>
-                    <li>Description: <br><h5><%=linkToDisplay.description%></h5></li><br>
-                    <li><button><a href="<%=linkToDisplay.link%>" target="_blank" class='categoriespage-links'>direct link</a></button></li><br>
+                        <h4><% linkToDisplay.categories.forEach(function(category){%><%=category.name%><%})%></h4>
+                    </li><br>
+                    <li>Description: <br><p><%=linkToDisplay.description%></p></li><br>
+                    <li><button><a href="<%=linkToDisplay.link%>" target="_blank" class='categoriespage-links'>direct link</a></button></li>
                     <% if(locals.user){%>
                         <form action="users/<%=user.id%>/favourites/new" method="GET">
                             <input hidden name="linkID" value="<%=linkToDisplay.id%>" />
                             <button><a class="categoriespage-links">add to favourites</a></button>
                         </form>    
                     <%}%>
-                    <br>
                     <li> <% if(locals.user){%>
                         <form action="/links/<%=linkToDisplay.id%>/edit" method="GET">
                             <button class="card-link">edit</button>
                         </form>    
                     <%}%>
-                    <br>
                     <% if(locals.user){%>
                         <form action="/links/<%=linkToDisplay.id%>?_method=DELETE" method="POST">
                             <button class="card-link">delete</button>
@@ -94,7 +92,6 @@
         <%} else {%>
                 <h5>Pick A Category</h5>    
         <%} %> 
-
     </div>
 </div> 
 <%- include('../partials/footer') %>

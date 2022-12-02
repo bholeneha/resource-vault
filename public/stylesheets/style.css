@@ -2,7 +2,7 @@
 :root {
   --offwhite: #FBF8F3;
   --orange: #f77532;
-  --blueborder: #c3e1e5;
+  --blueborder: #c3e1e5b7;
   --bluetext: #2A8A92;
 }
 
@@ -81,8 +81,13 @@ button:hover {
   background-color: var(--orange);
 }
 
+li {
+  font-size: 15px;
+}
+
 .nav-link {
   display: inline;
+  font-size: 16px;
 }
 
 /* HOME PAGE & GENERAL STYLING */
@@ -163,10 +168,6 @@ li {
   border-bottom: none;
 }
 
-.link-info {
-  margin: 5%;
-}
-
 label {
   margin: 5px;
 }
@@ -195,4 +196,23 @@ label {
 
 .row {
   margin-top: 2%;
+}
+
+.link-display {
+  height: 100%;
+  width: 100%;
+}
+
+.link-info {
+  margin: 1% 5%;
+  padding: 1%;
+  border: 2px solid var(--blueborder);
+}
+
+.link-info>li>h3 {
+  margin: 0;
+}
+
+p {
+  font-size: 18px;
 }
