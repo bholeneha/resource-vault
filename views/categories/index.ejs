@@ -20,7 +20,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href='/categories/<%=category.id%>'><%=category.name%>
                         <% if(user?.isAdmin){ %>
-                            <form class="categories-deletebtn" action="/categories/<%=category.id%>=?_method=DELETE" method="POST">
+                            <form class="categories-deletebtn" action="/categories/<%=category.id%>?_method=DELETE" method="POST">
                                 <button>delete</button>
                             </form> 
                         <% } %>

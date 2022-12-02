@@ -10,8 +10,6 @@ module.exports = {
 };
 
 function index(req, res) {
-
-
     Category.find({})
         .populate('links')
         .exec(function (err, category) {
@@ -73,8 +71,10 @@ function create(req, res) {
 }
 
 function deleteCategory(req, res) {
-    Category.deleteOne({ id: req.params.id }).exec(function (err) {
+    console.log(req.params.id)
+    Category.findByIdAndDelete(req.params.id, function (err, category) {
         if (err) return console.log("Errrorrr")
+        console.log(category + "removed")
         res.redirect('/categories')
     })
 }
