@@ -116,6 +116,10 @@ h2 {
   margin: 2% 2% 3% 2%;
 }
 
+h4 {
+  opacity: 50%;
+}
+
 .card {
   border: 2px solid var(--blueborder);
 }
@@ -151,6 +155,7 @@ li {
 .links-area {
   grid-column: 1 span 1;
   display: grid;
+  grid-template-rows: 5% 95%;
 }
 
 .nav-tabs {
@@ -173,4 +178,21 @@ label {
 
 .card-header {
   background-color: var(--offwhite);
+}
+
+.card-links {
+  justify-self: flex-end;
+}
+
+.card-text {
+  height: 85px;
+  font-size: 14px;
+}
+
+.col {
+  margin-top: 1%;
+}
+
+.row {
+  margin-top: 2%;
 }

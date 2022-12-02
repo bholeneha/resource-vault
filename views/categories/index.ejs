@@ -36,7 +36,7 @@
         <!-- If link clicked, display this -->
         <% if (locals.linkToDisplay){%>
             <div class="link-display">
-                <h3>Link Information</h3>
+                <h4>Link Information</h4>
                 <br>
                 <ul class="link-info">
                     <li><h5><%=linkToDisplay.name%></h5></li>
@@ -70,19 +70,21 @@
             <h4><%=category.name%></h4>   
             <div class="row row-cols-3 top-three">
                 <% category.links.forEach(function(link){%> 
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
+                    <div class="col card-group">
+                        <div class="card" style="width: 20vw; height: auto;">
                             <div class="card-body">
                                 <h5 class="card-header card-title"><%=link.name%></h5>
                                 <h6 class="card-subtitle mb-2 text-muted"><%=link.category%></h6>
                                 <p class="card-text"><%=link.description%></p>
-                                <a href="<%=link.link%>" class="card-link" target="_blank">direct link</a><br>
-                                <a href="/links/<%=link.id%>" class="card-link">more information</a>
-                                <% if(user){%>
-                                    <form action="users/<%=user.id%>/favourites/new" method="GET">
-                                        <a class="card-link">add to favourites</a>
-                                    </form>    
-                                <%}%>
+                                <div class="cardlinks card-body">
+                                    <a href="<%=link.link%>" class="card-link" target="_blank">direct link</a><br>
+                                    <a href="/links/<%=link.id%>" class="card-link">more information</a>
+                                    <% if(user){%>
+                                        <form action="users/<%=user.id%>/favourites/new" method="GET">
+                                            <a class="card-link">add to favourites</a>
+                                        </form>    
+                                    <%}%>
+                                </div>
                             </div>
                         </div>
                     </div>
