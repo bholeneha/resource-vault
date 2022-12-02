@@ -25,6 +25,12 @@ body {
     "footer";
 }
 
+main {
+  grid-area: main;
+  width: 95vw;
+  height: 70vh;
+}
+
 /* HEADER STYLING */
 
 header {
@@ -82,10 +88,12 @@ button:hover {
 /* HOME PAGE & GENERAL STYLING */
 .home-page {
   display: grid;
+  height: 100%;
   grid-template-rows: 50% 50%;
   grid-template-areas:
     "welcome"
     "topthree";
+
 }
 
 .home-page>.welcome-message {
@@ -122,6 +130,10 @@ li {
 
 /* CATEGORIES PAGE STYLING */
 
+.nav-light {
+  background-color: var(--offwhite);
+  padding: 1%;
+}
 
 .categories-page {
   display: grid;
@@ -152,4 +164,9 @@ li {
 
 label {
   margin: 5px;
+}
+
+.input-description {
+  width: 250px;
+  height: 100px;
 }

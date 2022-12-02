@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-    process.env.DATABASE_URL
-    // 'mongodb://localhost/resource-vault'
+    // process.env.DATABASE_URL
+    'mongodb://localhost/resource-vault'
     , {
         useNewUrlParser: true,
         useUnifiedTopology: true
