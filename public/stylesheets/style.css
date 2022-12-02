@@ -170,3 +170,7 @@ label {
   width: 250px;
   height: 100px;
 }
+
+.card-header {
+  background-color: var(--offwhite);
+}
