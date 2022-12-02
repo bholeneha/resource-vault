@@ -5,16 +5,19 @@ Resource Vault is a collection of links and resources for a dev student.
 ## First Look
 
 ### Landing Page
-![Landing Page](images/landing-page.png) 
+![Landing Page](screenshots/landing-page.png) 
 
 ### Categories Page
-![Category Page](images/c-page.png)
+![Category Page](screenshots/c-page.png)
 
-### Link View Page
-![Link View](images/l-view.png)
+### Links View 
+![Link View](screenshots/l-view.png)
 
 ### Add New Link Page
-![Add New Link Page](images/newlink-page.png)
+![Add New Link Page](screenshots/newlink-page.png)
+
+### Link View
+![Link Page](screenshots/link-page.png)
 
 ## Technology Used
 - MongoDB Atlas Cloud Database
