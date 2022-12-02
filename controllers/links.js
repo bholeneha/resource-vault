@@ -93,30 +93,32 @@ function deleteLink(req, res) {
 }
 
 function update(req, res) {
-    console.log(req.body)
-    let newLink = {}
-    Category.findOne({ name: req.body.category }).then(function (category, err) {
-        if (err) {
-            console.log('ERRRORRRRRR')
-        } else {
-            // console.log(category)
-            newLink['categories'] = []
-            newLink.categories.push(category.id)
-            for (const property in req.body) {
-                if (property != 'category') {
-                    newLink[property] = req.body[property]
-                }
+    Link.findById(req.params.id, function (err, link) {
+        for (const property in req.body) {
+            if (property != 'category') {
+                link[property] = req.body[property]
             }
-            const link = new Link(newLink)
-            link.save(function (err) {
-                console.log(link)
-                console.log(category.links)
-                category.links.push(link.id)
-                category.save(function (err, category) {
-                    console.log(category)
-                    res.redirect(`/links/${link.id}`)
-                })
+        }
+        console.log(link)
+        Category.findOne({ name: req.body.category }).then(function (category, err) {
+            console.log(category)
+            if (err) {
+                console.log('ERRRORRRRRR')
+            } else {
+                link['categories'] = []
+                link.categories.push(category.id)
+            }
+            category.links.push(link.id)
+
+            const p1 = link.save()
+            const p2 = category.save()
+
+            Promise.all([p1, p2]).then(function (results) {
+                console.log(results)
+                res.redirect(`/links/${results[0].id}`)
             })
         }
+        )
     })
+
 }
