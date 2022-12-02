@@ -1,22 +1,21 @@
 <%- include('../partials/header') %>
 <h2> Add New Favourite</h2>
 
-<form class="add-forms" action="/user/<%=user.id%>/favourites" method="POST">
+<form class="add-forms" action="/users/<%=user.id%>/favourites" method="POST">
 
     <label class="labels">Name:
-        <input type="text" name="name">
+        <input type="text" name="name" value="<%=link.name%>">
     </label><br>
 
     <label class="labels">Link:
-      <input type="text" name="link">
+      <input type="text" name="link" value="<%=link.link%>">
     </label><br>
 
     <label class="labels">Description:
-        <textarea type="text" name="description" class="input-description">
+        <textarea type="text" name="description" class="input-description"><%=link.description%></textarea>
       </label><br>
 
     <label class="labels">Pick a Category:
-        <!-- <input type="text" name="category"> -->
         <select name="category">
             <% categoryNames.forEach(function(category){ %>
                 <option value="<%=category%>"><%=category%></option>
@@ -32,8 +31,6 @@
         <textarea type="text" name="notes" class="input-description"></textarea>
     </label><br>
 
-
-    
     <button type="submit" value="Add Link">add to favourites</button>
 </form>
 

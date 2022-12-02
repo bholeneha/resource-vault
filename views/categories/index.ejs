@@ -47,9 +47,9 @@
                     <li>Description: <br><p><%=linkToDisplay.description%></p></li><br>
                     <li><button><a href="<%=linkToDisplay.link%>" target="_blank" class='categoriespage-links'>direct link</a></button></li>
                     <% if(locals.user){%>
-                        <form action="users/<%=user.id%>/favourites/new" method="GET">
+                        <form action="/users/<%=user.id%>/favourites/new" method="POST">
                             <input hidden name="linkID" value="<%=linkToDisplay.id%>" />
-                            <button><a class="categoriespage-links">add to favourites</a></button>
+                            <button>add to favourites</button>
                         </form>    
                     <%}%>
                     <li> <% if(locals.user){%>
@@ -79,9 +79,10 @@
                                     <a href="<%=link.link%>" class="card-link" target="_blank">direct link</a><br>
                                     <a href="/links/<%=link.id%>" class="card-link">more information</a>
                                     <% if(user){%>
-                                        <form action="users/<%=user.id%>/favourites/new" method="GET">
-                                            <a class="card-link">add to favourites</a>
-                                        </form>    
+                                        <form action="/users/<%=user.id%>/favourites/new" method="POST">
+                                            <input hidden name="linkID" value="<%=link.id%>" />
+                                            <button>add to favourites</button>
+                                        </form>       
                                     <%}%>
                                 </div>
                             </div>
