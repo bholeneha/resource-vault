@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 <h2> Your Favourites</h2>
-
+<% if (locals.user){  %> 
 <div class="row row-cols-4 top-four">
     <% user.favourites.forEach(function(fav){%> 
         <div class="col card-group">
@@ -11,7 +11,7 @@
                     <p class="card-text"><%=fav.description%></p>
                     <div class="cardlinks card-body">
                         <a href="<%=fav.link%>" class="card-link" target="_blank">direct link</a><br>
-                        <a href="/user/<%=user.id%>/favourites/<%=fav.id%>" class="card-link">more information</a>
+                        <a href="/users/<%=user.id%>/favourites/<%=fav.id%>" class="card-link">more information</a>
                     </div>
                 </div>
             </div>
@@ -19,5 +19,5 @@
     <%})%>
 </div>
 
-
+<%}%>
 <%- include('../partials/footer') %>
