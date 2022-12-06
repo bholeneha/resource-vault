@@ -67,10 +67,10 @@
             <!-- If category clicked, display this -->
         <% } else if (locals.category){%>
             <h5><%=category.name%></h5>   
-            <div class="row row-cols-3 top-three">
+            <div class="row row-cols-3">
                 <% category.links.forEach(function(link){%> 
-                    <div class="col card-group">
-                        <div class="card" style="width: 20vw; height: auto;">
+                    <div class="col">
+                        <div class="card h-100">
                             <div class="card-body">
                                 <h5 class="card-header card-title"><%=link.name%></h5>
                                 <h6 class="card-subtitle mb-2 text-muted"><%=link.category%></h6>
