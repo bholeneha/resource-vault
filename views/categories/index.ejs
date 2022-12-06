@@ -22,7 +22,7 @@
                         <a class="nav-link" href='/categories/<%=category.id%>'><%=category.name%>
                         <% if(user?.isAdmin){ %>
                             <form style="display: inline;" class="categories-deletebtn" action="/categories/<%=category.id%>?_method=DELETE" method="POST">
-                                <button>delete</button>
+                                <button><i class="bi bi-trash"></i></button>
                             </form> 
                         <% } %>
                         </a>
@@ -49,7 +49,7 @@
                     <% if(locals.user){%>
                         <form action="/users/<%=user.id%>/favourites/new" method="POST">
                             <input hidden name="linkID" value="<%=linkToDisplay.id%>" />
-                            <button>add to favourites</button>
+                            <button><i class="bi bi-heart-fill"></i></button>
                         </form>    
                     <%}%>
                     <li> <% if(locals.user){%>
@@ -72,19 +72,18 @@
                     <div class="col">
                         <div class="card h-100">
                             <div class="card-body">
+                                <% if(user){%>
+                                    <form class="add-to-favourite" action="/users/<%=user.id%>/favourites/new" method="POST">
+                                        <input hidden name="linkID" value="<%=link.id%>" />
+                                        <button class="card-link"><i class="bi bi-suit-heart"></i></button>
+                                    </form>       
+                                <%}%>
                                 <h5 class="card-header card-title"><%=link.name%></h5>
-                                <h6 class="card-subtitle mb-2 text-muted"><%=link.category%></h6>
+                                <!-- <h6 class="card-subtitle mb-2 text-muted"><%=link.category%></h6> -->
+                                <br>
                                 <p class="card-text"><%=link.description%></p>
-                                <div class="cardlinks card-body">
-                                    <a href="<%=link.link%>" class="card-link" target="_blank">direct link</a><br>
-                                    <a href="/links/<%=link.id%>" class="card-link">more information</a>
-                                    <% if(user){%>
-                                        <form action="/users/<%=user.id%>/favourites/new" method="POST">
-                                            <input hidden name="linkID" value="<%=link.id%>" />
-                                            <button>add to favourites</button>
-                                        </form>       
-                                    <%}%>
-                                </div>
+                                <a href="<%=link.link%>" class="card-link" target="_blank">direct link</a><br>
+                                <a href="/links/<%=link.id%>" class="card-link">more information</a>
                             </div>
                         </div>
                     </div>

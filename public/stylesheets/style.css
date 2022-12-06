@@ -6,6 +6,8 @@
   --bluetext: #2A8A92;
 }
 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
 
 * {
   box-sizing: border-box;
@@ -177,14 +179,8 @@ label {
   margin-bottom: 2%;
 }
 
-/* 
-
 .card-header {
   background-color: var(--offwhite);
-}
-
-.card-links {
-  justify-self: flex-end;
 }
 
 .card-text {
@@ -192,11 +188,6 @@ label {
   font-size: 14px;
 }
 
-
-
-.row {
-  margin: 2%;
-} */
 
 .link-display {
   height: 100%;
@@ -215,4 +206,13 @@ label {
 
 p {
   font-size: 18px;
+}
+
+i {
+  color: var(--orange);
+}
+
+i:hover {
+  color: white;
+  padding: 2%;
 }
