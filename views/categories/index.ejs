@@ -33,13 +33,11 @@
     </div>
 
     <div class="links-area">
-
         <!-- If link clicked, display this -->
         <% if (locals.linkToDisplay){%>
             <h5>Link Information</h5>
             <div class="link-display">
                 <ul class="link-info">
-                    <br>
                     <li><h3><%=linkToDisplay.name%></h3></li><br>
                     <li>Category:<br>
                         <h4><% linkToDisplay.categories.forEach(function(category){%><%=category.name%><%})%></h4>

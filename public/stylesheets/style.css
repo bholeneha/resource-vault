@@ -123,6 +123,7 @@ h2 {
 
 h5 {
   opacity: 50%;
+  margin-bottom: 10px;
 }
 
 main {
@@ -188,6 +189,9 @@ label {
   font-size: 14px;
 }
 
+.links-area {
+  justify-content: stretch;
+}
 
 .link-display {
   height: 100%;
@@ -215,4 +219,9 @@ i {
 i:hover {
   color: white;
   padding: 2%;
+}
+
+.link-name {
+  background-color: var(--offwhite);
+
 }
