@@ -21,7 +21,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href='/categories/<%=category.id%>'><%=category.name%>
                         <% if(user?.isAdmin){ %>
-                            <form class="categories-deletebtn" action="/categories/<%=category.id%>?_method=DELETE" method="POST">
+                            <form style="display: inline;" class="categories-deletebtn" action="/categories/<%=category.id%>?_method=DELETE" method="POST">
                                 <button>delete</button>
                             </form> 
                         <% } %>
@@ -45,7 +45,7 @@
                         <h4><% linkToDisplay.categories.forEach(function(category){%><%=category.name%><%})%></h4>
                     </li><br>
                     <li>Description: <br><p><%=linkToDisplay.description%></p></li><br>
-                    <li><button><a href="<%=linkToDisplay.link%>" target="_blank" class='categoriespage-links'>direct link</a></button></li>
+                    <li><a href="<%=linkToDisplay.link%>" target="_blank" class='categoriespage-links'>direct link</a></li>
                     <% if(locals.user){%>
                         <form action="/users/<%=user.id%>/favourites/new" method="POST">
                             <input hidden name="linkID" value="<%=linkToDisplay.id%>" />

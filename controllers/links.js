@@ -99,6 +99,7 @@ function update(req, res) {
                 link[property] = req.body[property]
             }
         }
+
         console.log(link)
         Category.findOne({ name: req.body.category }).then(function (category, err) {
             console.log(category)
@@ -108,7 +109,10 @@ function update(req, res) {
                 link['categories'] = []
                 link.categories.push(category.id)
             }
-            category.links.push(link.id)
+
+            if (!category.links.includes(link.id)) {
+                category.links.push(link.id)
+            }
 
             const p1 = link.save()
             const p2 = category.save()
