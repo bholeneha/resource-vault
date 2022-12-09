@@ -24,6 +24,9 @@
                             <form style="display: inline;" class="categories-deletebtn" action="/categories/<%=category.id%>?_method=DELETE" method="POST">
                                 <button><i class="bi bi-trash"></i></button>
                             </form> 
+                            <form style="display: inline;" class="categories-deletebtn" action="/categories/<%=category.id%>/edit" method="GET">
+                                <button><i class="bi bi-pencil"></i></button>
+                            </form> 
                         <% } %>
                         </a>
                     </li>
@@ -38,7 +41,7 @@
             <h5>Link Information</h5>
             <div class="link-display">
                 <ul class="link-info">
-                    <li><h3><%=linkToDisplay.name%></h3></li><br>
+                    <li><h3 class="link-name"><%=linkToDisplay.name%></h3></li><br>
                     <li>Category:<br>
                         <h4><% linkToDisplay.categories.forEach(function(category){%><%=category.name%><%})%></h4>
                     </li><br>
