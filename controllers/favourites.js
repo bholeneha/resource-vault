@@ -48,9 +48,10 @@ function create(req, res) {
 }
 
 function show(req, res) {
-    console.log(req)
-    User.findById
-    res.render('favourites/show')
+    User.findById(req.params.uid).then(function (result, err) {
+        let fav = result.favourites.find(f => f.id == req.params.fid)
+        res.render('favourites/show', { fav })
+    })
 }
 
 function newFav(req, res) {

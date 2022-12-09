@@ -1,17 +1,17 @@
 <%- include('../partials/header') %>
-<h2> Your Favourites</h2>
+<h2> Your Favourites Link View</h2>
 <% if (locals.user){  %> 
-    <% if (locals.fav){%>
-        <h5>Link Information</h5>
+   
+        <h5>Fvourite Information</h5>
         <div class="link-display">
             <ul class="link-info">
                 <br>
 
-                <li><h3><%=linkToDisplay.name%></h3></li><br>
+                <li><h3><%=fav.name%></h3></li><br>
                 
-                <li>Category:<br>
+                <!-- <li>Category:<br>
                     <h4><% fav.categories.forEach(function(category){%><%=category.name%><%})%></h4>
-                </li><br>
+                </li><br> -->
                 
                 <li>Recommended By: <h4><%=fav.recommendedBy%></h4></li><br>
                 
@@ -32,6 +32,6 @@
                 </li>
             </ul>
         </div>
-    <%}%>
+    
 <%}%>
 <%- include('../partials/footer') %>
