@@ -1,30 +1,37 @@
 <%- include('../partials/header') %>
-<h2> Add New Resource</h2>
 
-<form class="add-forms" action="/links" method="POST">
+<div class="container center-align">
 
-    <label class="labels">Name:
-        <input type="text" name="name">
-    </label><br>
+    <h2> Add New Resource</h2>
 
-    <label class="labels">Link:
-      <input type="text" name="link">
-    </label><br>
+    <form class="add-forms" action="/links" method="POST">
+    
+        <label class="labels">Name:
+            <input type="text" name="name">
+        </label><br>
+    
+        <label class="labels">Link:
+          <input type="text" name="link">
+        </label><br>
+    
+        <label class="labels">Description:
+            <textarea type="text" name="description" class="input-description"></textarea>
+        </label><br>
+    
+        <label class="labels">Pick a Category:
+            <!-- <input type="text" name="category"> -->
+            <select name="category">
+                <% categoryNames.forEach(function(category){ %>
+                    <option value="<%=category%>"><%=category%></option>
+                <% }) %>
+            </select>
+        </label><br>
+        <br>
+        <button class="btn" type="submit" value="Add Link">add</button>
 
-    <label class="labels">Description:
-        <textarea type="text" name="description" class="input-description"></textarea>
-    </label><br>
+    </form>
 
-    <label class="labels">Pick a Category:
-        <!-- <input type="text" name="category"> -->
-        <select name="category">
-            <% categoryNames.forEach(function(category){ %>
-                <option value="<%=category%>"><%=category%></option>
-            <% }) %>
-        </select>
-    </label><br>
-    <br>
-    <button type="submit" value="Add Link">add</button>
-</form>
+</div>
+
 
 <%- include('../partials/footer') %>

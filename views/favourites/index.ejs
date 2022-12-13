@@ -1,23 +1,24 @@
 <%- include('../partials/header') %>
-<h2> Your Favourites</h2>
-<% if (locals.user){  %> 
-<div class="row row-cols-4 top-four">
-    <% user.favourites.forEach(function(fav){%> 
-        <div class="col card-group">
-            <div class="card" style="width: 20vw; height: auto;">
-                <div class="card-body">
-                    <h5 class="card-header card-title"><%=fav.name%></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><%=fav.category%></h6>
-                    <p class="card-text"><%=fav.description%></p>
-                    <div class="cardlinks card-body">
+<div class="container">
+    <h2> Your Favourites</h2>
+    <% if (locals.user){  %> 
+    <div class="row">
+        <% user.favourites.forEach(function(fav){%> 
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-content">
+                        <h5 class="card-header card-title"><%=fav.name%></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><%=fav.category%></h6>
+                        <p class="card-text"><%=fav.description%></p>
+                    </div>
+                    <div class="card-action">
                         <a href="<%=fav.link%>" class="card-link" target="_blank">direct link</a><br>
                         <a href="/users/<%=user.id%>/favourites/<%=fav.id%>" class="card-link">more information</a>
                     </div>
                 </div>
             </div>
-        </div>
-    <%})%>
+        <%})%>
+    </div>
+    <%}%>
 </div>
-
-<%}%>
 <%- include('../partials/footer') %>

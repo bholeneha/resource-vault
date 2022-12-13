@@ -1,13 +1,17 @@
 <%- include('../partials/header') %>
-<h2> Add New Category</h2>
 
-<form class="add-forms" action="/categories" method="POST">
+<div class="container center-align">
 
-    <label class="labels">Name:
-        <input type="text" name="name" size="20">
-    </label><br><br>
+    <h2> Add New Category</h2>
     
-    <button type="submit" value="Add Link">Add</button>
-</form>
+    <form class="add-forms" action="/categories" method="POST">
+    
+        <label class="labels">Name:
+            <input type="text" name="name" size="20">
+        </label><br><br>
+        
+        <button class="btn" type="submit" value="Add Link">Add</button>
+    </form>
+</div>
 
 <%- include('../partials/footer') %>
