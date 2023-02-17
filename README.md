@@ -1,6 +1,6 @@
 # Resource Vault
 
-Resource Vault is a collection of links and resources for a dev student. 
+Resource Vault is a user-friendly web application designed to help students find the resources they need to succeed. Built using MongoDB, Express, and Node.js, it allows users to browse a wide variety of categories to find the right resources for their needs. With the added convenience of Google OAuth login, users can easily log in and save their favorite links for quick and easy access later on. Explore the power of Resource Vault today and take your learning journey to the next level!
 
 ## First Look
 
