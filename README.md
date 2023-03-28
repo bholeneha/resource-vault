@@ -21,6 +21,8 @@ Timeline: 6 days
       - [Brief](#brief)
       - [Sketches](#sketches)
     - [Build/Code Process](#buildcode-process)
+      - [BackEnd](#backend)
+      - [FrontEnd](#frontend)
     - [Challenges/Wins/Key Learning](#challengeswinskey-learning)
     - [Future Implementations](#future-implementations)
   - [Contributors](#contributors)
@@ -31,22 +33,7 @@ Timeline: 6 days
 
 ### First Look
 
-Landing Page
-![Landing Page](screenshots/landing-page.png) 
-
-Categories Page
-![Category Page](screenshots/c-page.png)
-
-Links View 
-![Link View](screenshots/l-view.png)
-
-Add New Link Page
-![Add New Link Page](screenshots/newlink-page.png)
-
-Link View
-![Link Page](screenshots/link-page.png)
-
-
+![Resource Vault First Look GIF](screenshots/rv.gif)
 
 ## Getting Started
 
@@ -77,9 +64,14 @@ Technologies used for this project are:
 ### Planning Process
 
 #### Brief
+
 #### Sketches
 
 ### Build/Code Process
+
+#### BackEnd
+
+#### FrontEnd
 
 [Back To The Top](#Simon)
 
