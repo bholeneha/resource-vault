@@ -1,8 +1,7 @@
 var router = require('express').Router();
 var linksCtrl = require('../controllers/links');
 
-/* GET users listing. */
-
+/* Links Related Routes */
 router.get('/links/new', linksCtrl.new);
 router.post('/links', linksCtrl.create);
 router.get('/links/:id', linksCtrl.show);

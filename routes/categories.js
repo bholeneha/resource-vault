@@ -1,7 +1,8 @@
 var router = require('express').Router();
 var categoriesCtrl = require('../controllers/categories');
 
-/* GET users listing. */
+/* Category Related Routes */
+
 router.get('/', categoriesCtrl.index);
 router.get('/new', categoriesCtrl.new);
 router.get('/:id', categoriesCtrl.show);

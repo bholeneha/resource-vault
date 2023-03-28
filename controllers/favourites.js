@@ -27,7 +27,7 @@ function create(req, res) {
     let newFav = {}
     Category.findOne({ name: req.body.category }).then(function (category, err) {
         if (err) {
-            console.log('ERRRORRRRRR')
+            console.log('ERROR: Category Not Found')
         } else {
             newFav['categories'] = []
             newFav.categories.push(category.id)
