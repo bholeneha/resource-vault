@@ -20,6 +20,8 @@ Timeline: 6 days
     - [Planning Process](#planning-process)
       - [Brief](#brief)
       - [Wireframes](#wireframes)
+      - [Project Management Tool](#project-management-tool)
+      - [ERD](#erd)
     - [Build/Code Process](#buildcode-process)
       - [BackEnd](#backend)
       - [FrontEnd](#frontend)
@@ -77,6 +79,14 @@ Project requirements:
 The wireframes have been developed using Figma and can be accessed through the link provided below.
 
 [Resource Vault Figma Wireframes ](https://www.figma.com/file/Kt8zj0guLqTyx0ueEIxtYS/Resource-Vault?node-id=0%3A1&t=LIy1FvWZZ2jmyR4i-1)
+
+#### Project Management Tool
+Trello was used for project management. 
+
+
+#### ERD 
+
+![ERD](screenshots/resourceVault.png)
 
 ### Build/Code Process
 
