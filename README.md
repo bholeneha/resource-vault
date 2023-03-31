@@ -24,6 +24,12 @@ Timeline: 6 days
       - [ERD](#erd)
     - [Build/Code Process](#buildcode-process)
       - [BackEnd](#backend)
+        - [Architecture](#architecture)
+        - [Database](#database)
+        - [API endpoints](#api-endpoints)
+        - [Authentication](#authentication)
+        - [Scalability](#scalability)
+        - [Deployment](#deployment)
       - [FrontEnd](#frontend)
     - [Challenges/Wins/Key Learning](#challengeswinskey-learning)
     - [Future Implementations](#future-implementations)
@@ -92,7 +98,31 @@ Created using Lucid App.
 
 #### BackEnd
 
+<!-- BackEnd Sections -->
+##### Architecture
+
+The backend system is built using the Model-View-Controller (MVC) architecture pattern using Node.js and Express.js. This architecture separates the application into three interconnected components: the Model (which handles data and business logic), the View (which presents the data to the user), and the Controller (which handles user input and interacts with both the Model and View).
+
+##### Database 
+The project uses MongoDB Atlas as the database for storing data. 
+
+<!-- There are three models used in the database - Category, Product, and Shade.
+
+Categories to Products have a one-to-many relationship, where each category can have many products associated with it.
+Category Schema is referenced in the Product Schema so that products can be queried independently.
+Products to Shades also have a one-to-many relationship, where each product can have many shades associated with it.
+Shade Schema is embedded in the Product Schema to simplify queries and improve performance. -->
+
+##### API endpoints
+##### Authentication
+##### Scalability 
+##### Deployment 
+
+[Back To The Top](#Simon)
+
 #### FrontEnd
+<!-- FrontEnd Sections -->
+
 
 [Back To The Top](#Simon)
 
