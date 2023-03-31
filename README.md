@@ -82,10 +82,10 @@ The wireframes have been developed using Figma and can be accessed through the l
 
 #### Project Management Tool
 Trello was used for project management. 
-
+![Trello Board](screenshots/rv-trello.png)
 
 #### ERD 
-
+Created using Lucid App. 
 ![ERD](screenshots/resourceVault.png)
 
 ### Build/Code Process
