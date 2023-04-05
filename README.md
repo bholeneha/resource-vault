@@ -31,6 +31,8 @@ Timeline: 6 days
         - [Scalability](#scalability)
         - [Deployment](#deployment)
       - [FrontEnd](#frontend)
+        - [Templates](#templates)
+        - [Design and Styling](#design-and-styling)
     - [Challenges/Wins/Key Learning](#challengeswinskey-learning)
     - [Future Implementations](#future-implementations)
   - [Contributors](#contributors)
@@ -156,13 +158,34 @@ The passport.authenticate() method is used to initiate the authentication flow w
 Once the user is authenticated, their information is stored in the req.user object, which is used to render the appropriate view based on the user's privileges. If the user is an admin, they will have additional privileges, and their isAdmin property will be set to true.
 
 ##### Scalability 
+
+This project was developed as a student project with a limited scope and is not intended for large-scale production use. However, the application is designed with scalability in mind, and several steps can be taken to improve its scalability:
+
+- The project uses a scalable database, MongoDB, which can handle large amounts of data.
+- The project is built with Node.js and Express, which can handle large amounts of traffic and requests.
+- The use of Google OAuth authentication also allows for easy scalability, as it can handle a large number of users.
+- However, in order to scale this project, it would require additional work, such as load balancing, optimizing database queries, and implementing caching.
+
+Overall, while this project is not designed for large-scale production use, it is built with scalability in mind and can be adapted to handle increased traffic and users with additional work.
+
 ##### Deployment 
+For deployment, this app uses Railway. 
 
 [Back To The Top](#Simon)
 
 #### FrontEnd
 <!-- FrontEnd Sections -->
 
+##### Templates
+The front end of this project is built using EJS templates. Each page is separated into its own file, and there are partials for the header and footer to maintain consistency throughout the application and for efficient code organization and maintenance.
+
+User authentication is implemented to restrict CRUD functionality to authenticated users. The navigation menu changes depending on the login status of the user, with two levels of logged in status: user and admin. While users can create, update and delete links, admins can also create, update or delete categories. This is to prevent incorrect or duplicate categories to be added. Overall, an attempt to maintain data integrity. 
+
+When a user logs in, they are redirected to the home page and their user information is stored in the session. This information is used to determine their level of access and which data they can interact with.
+
+##### Design and Styling
+
+This app uses the Materialize CSS framework for its front-end, providing modern and responsive user interface elements. The design prioritizes simplicity and consistency for easy navigation and readability. The color scheme is consistent throughout the app, without compromising its functionality or performance. Additionally, the interface has been designed with a minimalist and clean look to enhance its user-friendliness. While the styling is a work in progress, efforts have been made to make it visually appealing and functional, and future improvements could be made to enhance the overall look and feel of the app.
 
 [Back To The Top](#Simon)
 
