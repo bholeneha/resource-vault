@@ -15,6 +15,9 @@ const linkSchema = new Schema({
         // required: true,
     },
     categories: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
+    hits: {
+        type: Number
+    }
 });
 
 module.exports = mongoose.model('Link', linkSchema);

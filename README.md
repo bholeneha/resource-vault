@@ -68,7 +68,7 @@ Technologies used for this project are:
 - MongoDB Atlas Cloud Database
 - Express
 - NodeJS
-- Boostrap CSS
+- Materialize CSS 
 - Deployed on Railway App
 
 ### Planning Process
@@ -106,15 +106,55 @@ The backend system is built using the Model-View-Controller (MVC) architecture p
 ##### Database 
 The project uses MongoDB Atlas as the database for storing data. 
 
-<!-- There are three models used in the database - Category, Product, and Shade.
+The database for this project includes four models: Category, Link, User, and Favourite. 
 
-Categories to Products have a one-to-many relationship, where each category can have many products associated with it.
-Category Schema is referenced in the Product Schema so that products can be queried independently.
-Products to Shades also have a one-to-many relationship, where each product can have many shades associated with it.
-Shade Schema is embedded in the Product Schema to simplify queries and improve performance. -->
+Categories and Links have a many-to-many relationship. Each category can have multiple links associated with it and each link can belong to multiple categories. The Category schema is referenced in the Link schema so that links can be queried independently. 
+
+Users and Favourites have a one-to-many relationship, as Favourites will only be queried if a User is defined.
 
 ##### API endpoints
+
+| HTTP Method | Endpoint                    | Description                           |
+| ----------- | --------------------------- | ------------------------------------- |
+| GET         | /categories                 | Get all categories                    |
+| GET         | /categories/new             | Render form to create a new category  |
+| GET         | /categories/:id             | Get category by ID                    |
+| POST        | /categories                 | Create a new category                 |
+| DELETE      | /categories/:id             | Delete category by ID                 |
+|             |                             |                                       |
+| GET         | /links/new                  | Render form to create a new link      |
+| POST        | /links                      | Create a new link                     |
+| GET         | /links/:id                  | Get link by ID                        |
+| GET         | /links/:id/edit             | Render form to edit a link            |
+| DELETE      | /links/:id                  | Delete link by ID                     |
+| PUT         | /links/:id                  | Update link by ID                     |
+|             |                             |                                       |
+| GET         | /users/index                | Get all users                         |
+| GET         | /users/:id                  | Get user by ID                        |
+|             |                             |                                       |
+| GET         | /users/:id/favourites       | Get user's favourite links            |
+| GET         | /users/:uid/favourites/:fid | Get user's favourite link by ID       |
+| POST        | /users/:id/favourites/new   | Render form to create a new favourite |
+| POST        | /users/:id/favourites       | Create a new favourite                |
+| DELETE      | /users/:uid/favourites/:fid | Delete user's favourite link by ID    |
+
+
 ##### Authentication
+
+Users can authenticate themselves using their Google account. The following authentication flow has been implemented in the project:
+
+- The user clicks on the "Login" button, which redirects them to the Google authentication page.
+- The user enters their Google account credentials to sign in.
+- Once the user is authenticated, they are redirected back to the web app with their user information stored in a session.
+- The user can access the web app and perform actions based on their privileges.
+- The user can click on the "Logout" button to end their session and log out of the web app.
+
+The authentication is implemented using Google OAuth, and the code for the authentication routes can be found in the index.js file in the routes folder. 
+
+The passport.authenticate() method is used to initiate the authentication flow with Google OAuth. The successRedirect parameter is used to redirect the user to the home page once they are authenticated. The failureRedirect parameter is used to redirect the user to an error page in case the authentication fails.
+
+Once the user is authenticated, their information is stored in the req.user object, which is used to render the appropriate view based on the user's privileges. If the user is an admin, they will have additional privileges, and their isAdmin property will be set to true.
+
 ##### Scalability 
 ##### Deployment 
 
