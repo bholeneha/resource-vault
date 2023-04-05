@@ -83,6 +83,8 @@ Project requirements:
 - Deploy app 
 - Optionally use OAuth authentication, consume a third-party API, or expose its own API that returns data resources as JSON
 
+[Back To The Top](#Simon)
+
 #### Wireframes
 The wireframes have been developed using Figma and can be accessed through the link provided below.
 
@@ -95,6 +97,8 @@ Trello was used for project management.
 #### ERD 
 Created using Lucid App. 
 ![ERD](screenshots/resourceVault.png)
+
+[Back To The Top](#Simon)
 
 ### Build/Code Process
 
@@ -140,6 +144,7 @@ Users and Favourites have a one-to-many relationship, as Favourites will only be
 | POST        | /users/:id/favourites       | Create a new favourite                |
 | DELETE      | /users/:uid/favourites/:fid | Delete user's favourite link by ID    |
 
+[Back To The Top](#Simon)
 
 ##### Authentication
 
