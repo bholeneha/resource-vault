@@ -61,6 +61,7 @@ body {
   display: flex;
   flex-direction: column;
   color: var(--teal);
+  align-items: center;
   text-align: center;
 }
 
@@ -73,7 +74,9 @@ nav {
   color: var(--offwhite);
   padding: 1% 5%;
   height: 10vh;
+  width: 100vw;
   box-shadow: var(--box-shadow);
+  /* z-index: 9999; */
 }
 
 nav ul {
@@ -136,27 +139,17 @@ nav a:hover {
   gap: 10px;
   margin-top: 10px;
   position: absolute;
-  top: 100%;
   right: 0;
   width: 100%;
   background-color: var(--teal);
   color: var(--darker-orange);
   padding: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+  z-index: inherit;
 }
 
-.nav-items.active {
-  display: flex;
-  /* Show the navigation items when active */
-  position: absolute;
-  top: 10vh;
-  right: 0;
-  margin-top: 0;
-  width: 50vw;
-}
-
-/* Media query for larger screens */
-@media (min-width: 768px) {
+/* Media query for larger screens NAV */
+@media (min-width: 1100px) {
   nav {
     background-color: var(--teal);
     height: 13vh;
@@ -168,16 +161,35 @@ nav a:hover {
     padding: 0 2%;
   }
 
+  .nav-menu {
+    flex-direction: row;
+    align-items: center;
+  }
+
   .nav-items {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    gap: 20px;
     align-items: center;
+    width: auto;
+    box-shadow: none;
+    background-color: transparent;
   }
 
   .hamburger {
     display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .nav-items.active {
+    display: flex;
+    /* Show the navigation items when active */
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    margin-top: 0;
+    width: 50vw;
   }
 }
 
@@ -197,29 +209,51 @@ footer {
 }
 
 /* MAIN STYLING */
-
 main {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  min-height: 80vh;
+  min-height: 83vh;
   width: 80vw;
   padding: 0 2%;
 }
 
-.main-title {
-  height: 10vh;
-  width: 100vw;
+.home-title {
+  height: 40vh;
+  width: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
+  margin: 2vh 0;
+}
+
+.home-title h1 {
+  font-size: 2rem;
+}
+
+.home-title>h1>span {
+  display: block;
+  font-size: 3rem;
+  color: var(--darker-orange);
+  text-shadow: var(--text-shadow);
+  margin: 0.5vh 0 3vh 0;
+}
+
+.home-content {
+  min-height: 40vh;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
   justify-content: center;
 }
 
-.main-content {
-  min-height: 60vh;
-  width: 100vw;
-  margin: 0;
+/* Media query for larger screens */
+@media (min-width: 1100px) {
+  main {
+    min-height: 80vh;
+  }
 }
