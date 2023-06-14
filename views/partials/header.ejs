@@ -14,26 +14,29 @@
                 <ul>
                   <li><a href="/" class="brand-logo">&nbsp;&nbsp;Resource Vault</a></li>
                 </ul>
-                <div class="hamburger">
-                  <div class="hamburger-icon"></div>
-                  <div class="hamburger-icon"></div>
-                  <div class="hamburger-icon"></div>
+                
+                <div class="nav-menu">
+                  <div class="hamburger">
+                    <div class="hamburger-icon"></div>
+                    <div class="hamburger-icon"></div>
+                    <div class="hamburger-icon"></div>
+                  </div>
+                  <ul class="nav-items">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/categories">Explore</a></li>
+                    <% if (locals.user) { %>
+                      <% if(user.isAdmin == true){%>
+                        <li><a href="/categories/new">Add New Category</a></li>
+                      <%}%>
+                      <li><a class='categoriespage-links' href="/links/new">Add New Resource</a></li>
+                      <li><a href="/users/<%=user.id%>/favourites">Your Favourites</a></li>
+                      <li><a href="/users/index"> Your Profile</a></li>
+                      <li><a href="/logout">Log Out</a></li>
+                    <% } else { %>
+                      <li><a href="/auth/google">Login In</a></li>
+                    <% } %>
+                  </ul>
                 </div>
-                <ul class="nav-items">
-                  <li><a href="/">home</a></li>
-                  <li><a href="/categories">explore</a></li>
-                  <% if (locals.user) { %>
-                    <% if(user.isAdmin == true){%>
-                      <li><a href="/categories/new">add new category</a></li>
-                    <%}%>
-                    <li><a class='categoriespage-links' href="/links/new">add new resource</a></li>
-                    <li><a href="/users/<%=user.id%>/favourites">favourites</a></li>
-                    <li><a href="/users/index">profile</a></li>
-                    <li><a href="/logout">log out</a></li>
-                  <% } else { %>
-                    <li><a href="/auth/google">login In</a></li>
-                  <% } %>
-                </ul>
               </nav>
         </header>
     <main>
