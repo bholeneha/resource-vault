@@ -5,38 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resource Vault</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-        <header class="navbar-fixed">
+        <header>
             <nav>
-                <div class="nav-wrapper">
-                    <ul class="left-align left">
-                        <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Resource Vault</a></li>
-                    </ul>
-                    <ul class="right-align right">
-                        <li><a href="/"> home </a></li>
-                        <li><a href="/categories"> explore</a></li>
-                        
-                        <!-- <a href="/links/new">Add New Resource</a> -->
-                        <!-- Login UI -->
-                        <% if (locals.user) { %>
-                            <% if(user.isAdmin == true){%>
-                                <li><a href="/categories/new">add new category</a></li>
-                            <%}%>
-                            <li><a class='categoriespage-links' href="/links/new">add new resource</a></li>
-                            <li><a href="/users/<%=user.id%>/favourites">favourites</a></li>
-                            <li><a href="/users/index">profile</a></li>
-                            <li><a href="/logout">log out</a></li>
-                        <% } else { %>
-                            <li><a href="/auth/google">login In</a></li>
-                        <% } %>
-                    </ul>
+                <ul>
+                  <li><a href="/" class="brand-logo">&nbsp;&nbsp;Resource Vault</a></li>
+                </ul>
+                <div class="hamburger">
+                  <div class="hamburger-icon"></div>
+                  <div class="hamburger-icon"></div>
+                  <div class="hamburger-icon"></div>
                 </div>
-            </nav>
+                <ul class="nav-items">
+                  <li><a href="/">home</a></li>
+                  <li><a href="/categories">explore</a></li>
+                  <% if (locals.user) { %>
+                    <% if(user.isAdmin == true){%>
+                      <li><a href="/categories/new">add new category</a></li>
+                    <%}%>
+                    <li><a class='categoriespage-links' href="/links/new">add new resource</a></li>
+                    <li><a href="/users/<%=user.id%>/favourites">favourites</a></li>
+                    <li><a href="/users/index">profile</a></li>
+                    <li><a href="/logout">log out</a></li>
+                  <% } else { %>
+                    <li><a href="/auth/google">login In</a></li>
+                  <% } %>
+                </ul>
+              </nav>
         </header>
     <main>
 
