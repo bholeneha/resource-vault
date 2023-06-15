@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<h2> Add New Favourite</h2>
+<h2 class="main-title"> Add New Favourite</h2>
 
 <form class="add-forms" action="/users/<%=user.id%>/favourites" method="POST">
 
@@ -31,7 +31,7 @@
         <textarea type="text" name="notes" class="input-description"></textarea>
     </label><br>
 
-    <button type="submit" value="Add Link">add to favourites</button>
+    <button class="btn" type="submit" value="Add Link">Add To Favourites</button>
 </form>
 
 <%- include('../partials/footer') %>

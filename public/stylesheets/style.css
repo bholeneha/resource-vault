@@ -3,10 +3,9 @@
   --offwhite: #FBF8F3;
   --orange: #ff9861;
   --darker-orange: #fb7c37;
-  --lighter-teal: #c3e1e5b7;
   --teal: #2A8A92;
   --text-shadow: 2px 4px 3px rgba(0, 0, 0, .2);
-  --box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+  --box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, .3);
 }
 
 *,
@@ -63,6 +62,7 @@ body {
   color: var(--teal);
   align-items: center;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* NAVIGATION STYLING */
@@ -76,7 +76,6 @@ nav {
   height: 10vh;
   width: 100vw;
   box-shadow: var(--box-shadow);
-  /* z-index: 9999; */
 }
 
 nav ul {
@@ -94,7 +93,7 @@ nav li {
 nav a {
   text-decoration: none;
   text-shadow: var(--text-shadow);
-  color: var(--offwhite);
+  color: var(--teal);
 }
 
 nav a:hover {
@@ -141,11 +140,11 @@ nav a:hover {
   position: absolute;
   right: 0;
   width: 100%;
-  background-color: var(--teal);
+  background-color: var(--offwhite);
   color: var(--darker-orange);
   padding: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
-  z-index: inherit;
+  border-radius: 10px;
 }
 
 /* Media query for larger screens NAV */
@@ -174,6 +173,10 @@ nav a:hover {
     width: auto;
     box-shadow: none;
     background-color: transparent;
+  }
+
+  .nav-items a {
+    color: var(--offwhite);
   }
 
   .hamburger {
@@ -208,19 +211,55 @@ footer {
   padding: 0 2%;
 }
 
-/* MAIN STYLING */
+/* GLOBAL STYLING */
+
+/* Buttons */
+button {
+  background-color: var(--darker-orange);
+  box-shadow: var(--box-shadow);
+  border: none;
+  color: var(--offwhite);
+  font-size: 1.25rem;
+  border-radius: 10px;
+}
+
+.btn {
+  margin: 2%;
+  padding: 2% 5%;
+}
+
+button:hover {
+  background-color: var(--offwhite);
+  color: var(--darker-orange);
+}
+
+/* LISTS */
+ul {
+  list-style-type: none;
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+  color: var(--teal);
+}
+
+/* ICONS */
+button>i {
+  font-size: 1rem !important;
+}
+
+/* MAIN STYLING - HOME */
 main {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-items: center;
   min-height: 83vh;
-  width: 80vw;
-  padding: 0 2%;
 }
 
 .home-title {
-  height: 40vh;
+  height: 36vh;
   width: 100%;
   margin: 0;
   display: flex;
@@ -228,6 +267,7 @@ main {
   align-items: center;
   justify-content: flex-end;
   margin: 2vh 0;
+  width: 80vw;
 }
 
 .home-title h1 {
@@ -236,19 +276,20 @@ main {
 
 .home-title>h1>span {
   display: block;
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: var(--darker-orange);
   text-shadow: var(--text-shadow);
   margin: 0.5vh 0 3vh 0;
 }
 
 .home-content {
-  min-height: 40vh;
+  min-height: 18vh;
   width: 100%;
   margin: 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  width: 80vw;
 }
 
 /* Media query for larger screens */
@@ -256,4 +297,107 @@ main {
   main {
     min-height: 80vh;
   }
+}
+
+/* MAIN STYLING GENERAL */
+
+.main-content {
+  align-self: flex-start;
+  justify-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  /* align-items: flex-start; */
+  width: 100vw;
+}
+
+.categories {
+  justify-self: flex-start;
+  box-shadow: var(--box-shadow);
+  background-color: rgba(255, 152, 97, 0.7);
+  margin-bottom: 3vh;
+  ;
+}
+
+.categories ul {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 1rem 0;
+  overflow-x: scroll;
+  padding: 0 0 0 1rem;
+  justify-content: flex-start;
+  scrollbar-width: none;
+  scroll-padding-left: 1rem;
+  /* Same as gutter */
+  scroll-snap-type: x mandatory;
+}
+
+.categories ul::-webkit-scrollbar {
+  display: none;
+}
+
+.categories ul>li {
+  margin: 0 1rem 0 0;
+  width: 150px;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  background-color: var(--offwhite);
+  border-radius: 10px;
+  text-shadow: var(--text-shadow);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3vh 0;
+  gap: 3vh
+}
+
+.link-card {
+  background-color: var(--offwhite);
+  box-shadow: var(--box-shadow);
+  width: 65vw;
+  padding: 5%;
+  border-radius: 10px;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.link-card>hr {
+  border: 0;
+  height: 5px;
+  background: var(--teal);
+  opacity: .75;
+}
+
+.card-title {
+  background-color: var(--teal);
+  color: var(--offwhite);
+  display: block;
+  font-size: 1.5rem;
+  box-shadow: var(--box-shadow);
+  text-shadow: var(--text-shadow);
+  border-radius: 10px;
+  padding: 2%;
+}
+
+.card-action {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-action a {
+  background-color: var(--orange);
+  color: var(--offwhite);
+  font-size: 1rem;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  padding: 1%;
 }

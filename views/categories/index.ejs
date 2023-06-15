@@ -1,24 +1,24 @@
 <%- include('../partials/header') %>
 
-<div class="row container">
-    <h2> Explore Categories</h2>
-</div>
+<!-- <div>
+    <h2 class="main-title"> Explore Categories</h2>
+</div> -->
 
-<div class="row container">
+<div class="main-content">
 
-    <!-- Categories Side Navigation -->
-    <div class="col s3">
+    <!-- Categories Navigation -->
+    <div class="categories">
+        <!-- <h2>Categories</h2> -->
         <ul>
-            <li>Categories</li><br>
             <%categories.forEach(function(category){%>
-                <li class="nav-item">
-                    <a class="nav-link" href='/categories/<%=category.id%>'><%=category.name%>
+                <li class="category">
+                    <a class="category-link" href='/categories/<%=category.id%>'><%=category.name%><br>
                     <% if(user?.isAdmin){ %>
-                        <form style="display: inline;" class="categories-deletebtn" action="/categories/<%=category.id%>?_method=DELETE" method="POST">
-                            <button><i class="tiny material-icons">delete</i></button>
+                        <form style="display: inline;" class="categories-action" action="/categories/<%=category.id%>?_method=DELETE" method="POST">
+                            <button><i class="material-icons">delete</i></button>
                         </form> 
-                        <form style="display: inline;" class="categories-deletebtn" action="/categories/<%=category.id%>/edit" method="GET">
-                            <button><i class="tiny material-icons">edit</i></button>
+                        <form style="display: inline;" class="categories-action" action="/categories/<%=category.id%>/edit" method="GET">
+                            <button><i class="material-icons">edit</i></button>
                         </form> 
                     <% } %>
                     </a>
@@ -29,7 +29,7 @@
 
 
     <!-- Links View Area -->
-    <div class="col s9">
+    <div class="link-view">
 
             <!-- If link clicked, display this -->
             <% if (locals.linkToDisplay){%>
@@ -44,7 +44,7 @@
                     <% if(locals.user){%>
                         <form action="/users/<%=user.id%>/favourites/new" method="POST">
                             <input hidden name="linkID" value="<%=linkToDisplay.id%>" />
-                            <button><i class="bi bi-heart-fill"></i></button>
+                            <button><i class="material-icons">favorite</i></button>
                         </form>    
                     <%}%>
                     <li> <% if(locals.user){%>
@@ -61,32 +61,31 @@
 
             <!-- If category clicked, display this -->
             <% } else if (locals.category){%>
-                <h5><%=category.name%></h5>   
-                <div class="row">
+                <h2><%=category.name%></h2>   
+                <div class="links">
                     <% category.links.forEach(function(link){%> 
-                        <div class="col s12 m6">
-                            <div class="card">
-                                <div class="card-content">
-                                    <span class="card-title"><%=link.name%></span>
-                                    <!-- <h6 class="card-subtitle mb-2 text-muted"><%=link.category%></h6> -->
-                                    <p><%=link.description%></p>
-                                </div>
-                                <div class="card-action">
-                                    <a href="<%=link.link%>" class="card-link" target="_blank">direct link</a><br>
-                                    <a href="/links/<%=link.id%>" class="card-link">more information</a>
-                                    <% if(user){%>
-                                        <form class="add-to-favourite" action="/users/<%=user.id%>/favourites/new" method="POST">
-                                            <input hidden name="linkID" value="<%=link.id%>" />
-                                            <button type="submit"><i class="material-icons">favorite-border</i></button>
-                                        </form>       
-                                    <%}%>
-                                </div>
+                        <div class="link-card">
+                            <div class="card-content">
+                                <span class="card-title"><%=link.name%></span>
+                                <!-- <h6 class="card-subtitle mb-2 text-muted"><%=link.category%></h6> -->
+                                <p><%=link.description%></p>
+                            </div>
+                            <hr>
+                            <div class="card-action">
+                                <a href="<%=link.link%>" class="card-link" target="_blank">direct link</a><br>
+                                <a href="/links/<%=link.id%>" class="card-link">more information</a>
+                                <% if(user){%>
+                                    <form class="add-to-favourite" action="/users/<%=user.id%>/favourites/new" method="POST">
+                                        <input hidden name="linkID" value="<%=link.id%>" />
+                                        <button type="submit"><i class="material-icons">favorite</i></button>
+                                    </form>       
+                                <%}%>
                             </div>
                         </div>
                     <%})%>
                 </div>
             <%} else {%>
-                    <h5>Pick A Category</h5>    
+                    <h3>Pick A Category</h3>    
             <%} %> 
     </div>
 
