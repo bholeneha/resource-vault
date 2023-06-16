@@ -52,7 +52,6 @@ function show(req, res) {
                 } else {
                     res.render('categories/index', { user: req.user, category, categories })
                 }
-                console.log(category)
             })
         })
 }
@@ -64,7 +63,6 @@ function create(req, res) {
         if (err) {
             console.log("ERRRORR" + err)
         } else {
-            console.log(category)
             res.redirect('/categories')
         }
     })
@@ -74,7 +72,6 @@ function deleteCategory(req, res) {
     console.log(req.params.id)
     Category.findByIdAndDelete(req.params.id, function (err, category) {
         if (err) return console.log("Errrorrr")
-        console.log(category + "removed")
         res.redirect('/categories')
     })
 }

@@ -50,7 +50,6 @@ function create(req, res) {
 function show(req, res) {
     User.findById(req.params.uid).then(function (result, err) {
         let fav = result.favourites.find(f => f.id == req.params.fid)
-        console.log(req.user)
         res.render('favourites/show', { fav, user: req.user })
     })
 }

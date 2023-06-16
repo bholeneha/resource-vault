@@ -109,7 +109,6 @@ function update(req, res) {
             const p2 = category.save()
 
             Promise.all([p1, p2]).then(function (results) {
-                console.log(results)
                 res.redirect(`/links/${results[0].id}`)
             })
         }
