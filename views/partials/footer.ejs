@@ -1,9 +1,18 @@
 
-</main> 
+    </main> 
 
-<footer class="page-footer">
-    <div class="right">All Rights Reserved, &copy; 2022 Resource Vault &nbsp;</div>
-</footer>
+    <footer>
+        <div class="right">All Rights Reserved, &copy; 2022 Resource Vault &nbsp;</div>
+    </footer>
 
-</body>
+    </body>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navItems = document.querySelector('.nav-items');
+
+        hamburger.addEventListener('click', () => {
+        console.log("Ham Menu Clicked")
+        navItems.classList.toggle('active');
+        });
+    </script>
 </html>

@@ -1,33 +1,33 @@
 <%- include('../partials/header') %>
 
-<div class="container center-align">
+<div class="form-page">
 
-    <h2> Add New Resource</h2>
+    <h2 class="main-title"> Add New Resource</h2>
 
-    <form class="add-forms" action="/links" method="POST">
+    <form class="form" action="/links" method="POST">
     
-        <label class="labels">Name:
-            <input type="text" name="name">
-        </label><br>
+        <label class="labels">Name <br>
+            <input type="text" name="name" class="input">
+        </label>
     
-        <label class="labels">Link:
-          <input type="text" name="link">
-        </label><br>
+        <label class="labels">Link <br>
+          <input type="text" name="link" class="input">
+        </label>
     
-        <label class="labels">Description:
-            <textarea type="text" name="description" class="input-description"></textarea>
-        </label><br>
+        <label class="labels">Description <br>
+            <textarea type="text" name="description" class="input-description" ></textarea>
+        </label>
     
-        <label class="labels">Pick a Category:
+        <label class="labels">Pick a Category <br>
             <!-- <input type="text" name="category"> -->
-            <select name="category">
+            <select name="category" class="input">
                 <% categoryNames.forEach(function(category){ %>
                     <option value="<%=category%>"><%=category%></option>
                 <% }) %>
             </select>
-        </label><br>
-        <br>
-        <button class="btn" type="submit" value="Add Link">add</button>
+        </label>
+        
+        <button class="submit-btn" type="submit" value="Add Link">Add Resource</button>
 
     </form>
 
