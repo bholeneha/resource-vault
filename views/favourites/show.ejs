@@ -1,39 +1,40 @@
 <%- include('../partials/header') %>
-<div class="container">
-    <h2 class="main-title"> Your Favourites Link View</h2>
+<div class="link-view">
+    <h2 class="main-title">Your Favourites</h2>
     <% if (locals.user){  %> 
        
-            <h5>Favourite Information</h5>
-            <div class="link-display">
-                <ul class="link-info">
-                    <br>
+            <h6>More Information</h6><br>
+            <div class="link-card link-info fav-view">
+                <div class="card-content">
+                    <span class="card-title"><%=fav.name%></span>
+                    
+                    <h6><%fav.categories.forEach(function(category){%><%=category.name%><%})%></h6>
+                    
+                    <div class="link-notes">
+                        <h5>Description:</h5>
+                        <p><%=fav.description%></p>
+                    </div>
     
-                    <li><h3><%=fav.name%></h3></li><br>
-                    
-                    <!-- <li>Category:<br>
-                        <h4><% fav.categories.forEach(function(category){%><%=category.name%><%})%></h4>
-                    </li><br> -->
-                    
-                    <li>Recommended By: <h4><%=fav.recommendedBy%></h4></li><br>
-                    
-                    <li>Description: <br><p><%=fav.description%></p></li><br>
-                    
-                    <li>Notes: <br><p><%=fav.notes%></p></li><br>
-                    
-                    <li><button><a href="<%=fav.link%>" target="_blank" class='categoriespage-links'>direct link</a></button></li>
-                    
-                     <li> 
-                        <form action="/links/<%=fav.id%>/edit" method="GET">
-                            <button class="card-link">edit</button>
-                        </form>    
+                    <div class="link-notes">
+                        <h5>Notes:</h5>
+                        <span>Recommended By: <h6><%=fav.recommendedBy%></h6></span>
+                        <p><%=fav.notes%></p>
+                    </div>
+                </div>
+
+                <div class="hr"></div>
+
+                <div class="card-actions show-view">
+                    <a class='card-action' href="<%=fav.link%>" target="_blank">Direct Link</a>
+                    <form action="/links/<%=fav.id%>/edit" method="GET">
+                        <button class='card-action'>Edit</button>
+                    </form>    
         
-                        <form action="/links/<%=fav.id%>?_method=DELETE" method="POST">
-                            <button class="card-link">delete</button>
-                        </form>    
-                    </li>
-                </ul>
+                    <form action="/links/<%=fav.id%>?_method=DELETE" method="POST">
+                        <button class='card-action'>Delete</button>
+                    </form>    
+                </div>
             </div>
-        
     <%}%>
 </div>
 <%- include('../partials/footer') %>
