@@ -1,37 +1,40 @@
 <%- include('../partials/header') %>
-<h2 class="main-title"> Add New Favourite</h2>
+<div class="form-page">
 
-<form class="add-forms" action="/users/<%=user.id%>/favourites" method="POST">
-
-    <label class="labels">Name:
-        <input type="text" name="name" value="<%=link.name%>">
-    </label><br>
-
-    <label class="labels">Link:
-      <input type="text" name="link" value="<%=link.link%>">
-    </label><br>
-
-    <label class="labels">Description:
-        <textarea type="text" name="description" class="input-description"><%=link.description%></textarea>
-      </label><br>
-
-    <label class="labels">Pick a Category:
-        <select name="category">
-            <% categoryNames.forEach(function(category){ %>
-                <option value="<%=category%>"><%=category%></option>
-            <% }) %>
-        </select>
-    </label><br>
-
-    <label class="recommendedBy">Recommended By:
-        <input type="text" name="recommendedBy">
-    </label><br>
-
-    <label class="notes">Notes:
-        <textarea type="text" name="notes" class="input-description"></textarea>
-    </label><br>
-
-    <button class="btn" type="submit" value="Add Link">Add To Favourites</button>
-</form>
+    <h2 class="main-title"> Add New Favourite</h2>
+    
+    <form class="form" action="/users/<%=user.id%>/favourites" method="POST">
+    
+        <label class="labels">Name<br>
+            <input class="input" type="text" name="name" value="<%=link.name%>">
+        </label>
+    
+        <label class="labels">Link<br>
+          <input  class="input" type="text" name="link" value="<%=link.link%>">
+        </label>
+    
+        <label class="labels">Description<br>
+            <textarea type="text" name="description" class="input-description"><%=link.description%></textarea>
+          </label>
+    
+        <label class="labels">Pick a Category<br>
+            <select name="category" class="input">
+                <% categoryNames.forEach(function(category){ %>
+                    <option value="<%=category%>"><%=category%></option>
+                <% }) %>
+            </select>
+        </label>
+    
+        <label class="labels">Recommended By<br>
+            <input class="input" type="text" name="recommendedBy">
+        </label>
+    
+        <label class="labels">Notes<br>
+            <textarea type="text" name="notes" class="input-description"></textarea>
+        </label>
+    
+        <button class="submit-btn" type="submit" value="Add Link">Add To Favourites</button>
+    </form>
+</div>
 
 <%- include('../partials/footer') %>

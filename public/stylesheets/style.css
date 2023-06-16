@@ -223,7 +223,7 @@ button {
   border-radius: 10px;
 }
 
-.btn {
+.submit-btn {
   margin: 2%;
   padding: 2% 5%;
 }
@@ -379,11 +379,6 @@ main {
   gap: 10px;
 }
 
-.link-card:hover {
-  height: 28vh;
-  width: 72vw;
-}
-
 
 @media (min-width: 1000px) {
   .link-card {
@@ -511,4 +506,44 @@ main {
 
 .link-notes h5 {
   margin: 7.5px 0;
+}
+
+/* FORM PAGE STYLES */
+
+.form-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 2vh 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2vh;
+  width: 70vw;
+}
+
+.labels {
+  margin: 0.75vh 0;
+  font-size: 1rem;
+}
+
+.input-description {
+  height: 5rem;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--teal);
+  padding: 0.25rem;
+}
+
+.input {
+  width: 100%;
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--teal);
+  padding: 0.25rem;
 }
