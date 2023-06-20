@@ -26,7 +26,7 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  margin: 25px 0;
+  margin: 10px 0;
 }
 
 h3 {
@@ -193,6 +193,7 @@ nav a:hover {
     right: 0;
     margin-top: 0;
     width: 50vw;
+    z-index: 9;
   }
 }
 
@@ -404,9 +405,17 @@ main {
 }
 
 .card-text {
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  padding: 0 10px;
+  display: -webkit-box;
+  /* max-width: 200px; */
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
+  /* overflow-wrap: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  max-height: 3.5rem;
+  text-overflow: ellipsis; */
 }
 
 /* horizontal rule */
